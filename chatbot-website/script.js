@@ -1,5 +1,40 @@
-// Smooth scrolling for navigation links
+// Login functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if user is already logged in
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        showMainContent();
+    }
+
+    // Handle login form submission
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('loginError');
+            
+            // Check credentials
+            if (username === 'Dominik' && password === 'DomAmic2025') {
+                localStorage.setItem('isLoggedIn', 'true');
+                showMainContent();
+            } else {
+                errorMessage.style.display = 'block';
+                // Clear form
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            }
+        });
+    }
+
+    function showMainContent() {
+        document.getElementById('loginContainer').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+        initMainPageFunctionality();
+    }
+
+    function initMainPageFunctionality() {
     // Get all navigation links
     const navLinks = document.querySelectorAll('.nav-link, .cta-button');
     
@@ -139,5 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     addScrollToTop();
+    }
 });
 

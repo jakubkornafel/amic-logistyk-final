@@ -25,6 +25,10 @@ body {
     background-color: var(--white);
 }
 
+.main-content {
+    padding-bottom: 0;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -126,10 +130,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--green) 0%, var(--orange) 50%, var(--red) 100%);
-    color: var(--white);
-    padding: 40px 0;
-    text-align: center;
+    display: none;
 }
 
 .hero-content {
@@ -164,8 +165,9 @@ body {
 
 /* Chat Section */
 .chat-section {
-    padding: 40px 0;
+    padding: 0;
     background-color: var(--gray-light);
+    height: calc(100vh - 110px);
 }
 
 .chat-section .container {
@@ -200,10 +202,10 @@ body {
 
 .chatbot-iframe {
     width: 100%;
-    height: 700px;
+    height: calc(100vh - 50px);
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    box-shadow: none;
 }
 
 /* About Section */
@@ -271,18 +273,28 @@ body {
     background-color: var(--gray-dark);
     color: var(--white);
     text-align: center;
-    padding: 30px 0;
+    padding: 7px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
+        padding: 10px 20px;
     }
 
     .nav {
         gap: 20px;
+    }
+
+    .main {
+        margin-top: 30px;
     }
 
     .hero-title {
@@ -290,7 +302,11 @@ body {
     }
 
     .hero {
-        padding: 30px 0;
+        padding: 15px 0;
+    }
+
+    .hero .cta-button {
+        display: none;
     }
 
     .section-title {
@@ -303,7 +319,7 @@ body {
     }
 
     .chatbot-iframe {
-        height: 600px;
+        height: calc(100vh - 80px);
     }
 
     .chatbot-container {
@@ -313,7 +329,7 @@ body {
     }
 
     .chat-section {
-        padding: 30px 0;
+        padding: 0;
     }
 }
 
@@ -332,11 +348,11 @@ body {
 
     .chat-section,
     .about-section {
-        padding: 60px 0;
+        padding: 20px 0;
     }
 
     .chatbot-iframe {
-        height: 500px;
+        height: calc(100vh - 80px);
     }
 
     .chatbot-container {
@@ -346,7 +362,7 @@ body {
     }
 
     .chat-section {
-        padding: 20px 0;
+        padding: 0;
     }
 }
 
@@ -370,5 +386,103 @@ html {
 
 .loading {
     animation: pulse 2s infinite;
+}
+
+/* Login Styles */
+.login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--green) 0%, var(--orange) 50%, var(--red) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.login-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.login-logo .logo-circle {
+    margin-bottom: 15px;
+}
+
+.login-form h2 {
+    color: var(--red);
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--gray-dark);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--gray-medium);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--red);
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #d32f2f;
+}
+
+.error-message {
+    color: var(--red);
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ffebee;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
 }
 

@@ -7,6 +7,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Login Form -->
+    <div id="loginContainer" class="login-container">
+        <div class="login-form">
+            <div class="login-logo">
+                <div class="logo-circle">
+                    <div class="logo-segment green"></div>
+                    <div class="logo-segment orange"></div>
+                    <div class="logo-segment red"></div>
+                    <div class="logo-segment yellow"></div>
+                </div>
+                <h1 class="logo-text">AMIC Logistyk</h1>
+            </div>
+            <h2>Zaloguj się</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Login:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Zaloguj</button>
+                <div id="loginError" class="error-message" style="display: none;">
+                    Nieprawidłowy login lub hasło
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Website Content -->
+    <div id="mainContent" class="main-content" style="display: none;">
     <header class="header">
         <div class="container">
             <div class="logo">
@@ -18,10 +50,6 @@
                 </div>
                 <h1 class="logo-text">AMIC Logistyk</h1>
             </div>
-            <nav class="nav">
-                <a href="#home" class="nav-link">Start</a>
-                <a href="#chat" class="nav-link">Czat</a>
-            </nav>
         </div>
     </header>
 
@@ -29,7 +57,6 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2 class="hero-title">AMIC Logistyk</h2>
                     <a href="#chat" class="cta-button">Rozpocznij czat</a>
                 </div>
             </div>
@@ -53,9 +80,10 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 AMIC Logistyk. Wszystkie prawa zastrzeżone.</p>
+            <p>&copy; 2025 AMIC Logistyk</p>
         </div>
     </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
