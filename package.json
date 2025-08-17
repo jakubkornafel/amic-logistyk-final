@@ -1,0 +1,11 @@
+{
+  "name": "amic-logistyk-website",
+  "version": "1.0.0",
+  "description": "AMIC Logistyk website with AI chatbot",
+  "scripts": {
+    "build": "node generate-config.js && cp -r chatbot-website/* dist/",
+    "prebuild": "mkdir -p dist"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const errorMessage = document.getElementById('loginError');
             
             // Check credentials
-            if (username === 'Dominik' && password === 'DomAmic2025') {
+            if (username === CONFIG.credentials.username && password === CONFIG.credentials.password) {
                 localStorage.setItem('isLoggedIn', 'true');
                 showMainContent();
             } else {
